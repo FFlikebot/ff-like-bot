@@ -1,4 +1,16 @@
 const { Bot } = require('grammy');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Bot is running!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
 const axios = require('axios');
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
